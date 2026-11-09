@@ -34,7 +34,7 @@ jobs:
 
       - run: make build
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: builds
           path: bin
@@ -62,7 +62,7 @@ jobs:
           set GOARCH=386
           go build -ldflags="-s -w" -o bin/nonbiri_windows-386.exe
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: builds-windows
           path: bin
@@ -86,7 +86,7 @@ jobs:
         with:
           cmd: --cwd view prod
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: assets
           path: bin/assets
@@ -98,7 +98,7 @@ jobs:
     needs: [build, build-windows, build-web]
 
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           path: .
 
