@@ -7,7 +7,7 @@ on:
 
 jobs:
   check:
-    if: "github.repository == 'Orim12/nonbiri'"
+    
     name: Cancel previous actions
     runs-on: ubuntu-latest
 
@@ -18,7 +18,7 @@ jobs:
           all_but_latest: true
 
   build:
-    if: "github.repository == 'Orim12/nonbiri'"
+    
     name: Build
     runs-on: ubuntu-latest
     needs: check
@@ -40,7 +40,7 @@ jobs:
           path: bin
 
   build-windows:
-    if: "github.repository == 'Orim12/nonbiri'"
+    
     name: Build (Windows)
     runs-on: windows-latest
     needs: check
@@ -68,7 +68,7 @@ jobs:
           path: bin
 
   build-web:
-    if: "github.repository == 'Orim12/nonbiri'"
+    
     name: Build web
     runs-on: ubuntu-latest
     needs: check
@@ -92,7 +92,7 @@ jobs:
           path: bin/assets
 
   publish:
-    if: "github.repository == 'Orim12/nonbiri'"
+    
     name: Publish
     runs-on: ubuntu-latest
     needs: [build, build-windows, build-web]
